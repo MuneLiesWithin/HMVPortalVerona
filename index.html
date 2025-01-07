@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Verona</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+            <img src="hmv.png" alt="hmv">
+            <img src="onbase.png" alt="onbase">
+            <img src="power.png" alt="power" style="margin-bottom: 2.5em;">  
+    </header>
+    <div id="message">
+        <p></p>
+    </div>
+    <fieldset class="upload">
+        <legend>Subir Arquivo</legend>
+        <div class="form">
+            <label for="fileUpload">Selecione um arquivo:</label><br>
+            <input type="file" id="fileUpload" accept=".xlsx, .xls"><br><br>
+            <button onclick="uploadExcel()" id="uploadFileButton">Subir</button>
+        </div>
+    </fieldset>
+    <footer>
+        <p>Power Imaging<sup>&copy;</sup> 2025</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
