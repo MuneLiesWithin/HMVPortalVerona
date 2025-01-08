@@ -2,12 +2,14 @@
     const inputFile = document.getElementById("fileUpload").files[0];
 
     if (!inputFile) {
-        console.log("No file selected.");
+        flashMessage("warning", "Por favor insira um arquivo");
         return;
     }
 
     // Path to the reference Excel file
     const referenceFilePath = "Excel/Excel.xlsx";
+
+    flashMessage("neutral", "Aguarde um momento...")
 
     try {
         // Read and parse the uploaded Excel file
@@ -26,11 +28,14 @@
         if (arraysEqual(uploadedFileColumns, referenceFileColumns)) {
             // Save the uploaded file as Excel2.xlsx
             saveUploadedFile(inputFile, "Excel/Excel2.xlsx");
+            flashMessage("success", "Arquivo subido com sucesso")
         } else {
             console.log("An error occurred: Column names do not match.");
+            flashMessage("error", "Ocorreu um erro...")
         }
     } catch (error) {
         console.error("An error occurred:", error);
+        flashMessage("error", "Ocorreu um erro...")
     }
 }
 
