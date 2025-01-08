@@ -25,7 +25,7 @@
         // Compare columns
         if (arraysEqual(uploadedFileColumns, referenceFileColumns)) {
             // Save the uploaded file as Excel2.xlsx
-            saveUploadedFile(inputFile, "sitedirectory/Excel/Excel2.xlsx");
+            saveUploadedFile(inputFile, "Excel/Excel2.xlsx");
         } else {
             console.log("An error occurred: Column names do not match.");
         }
@@ -66,7 +66,7 @@ async function saveUploadedFile(file) {
     formData.append("file", file);
 
     try {
-        const response = await fetch("http://localhost:5000/api/excel/upload", {
+        const response = await fetch("https://localhost:7232/api/excel/upload", {
             method: "POST",
             body: formData,
         });
