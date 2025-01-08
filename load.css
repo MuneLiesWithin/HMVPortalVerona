@@ -6,8 +6,8 @@
 .lds-ring {
   display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 30px;
+  height: 30px;
   color: rgb(7, 81, 146);
 }
 

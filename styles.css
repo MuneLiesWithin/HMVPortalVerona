@@ -63,10 +63,16 @@ button:active{
     color:rgb(143, 65, 65);
 }
 
-
 .loadmaster {
     display: flex;
     justify-content: center;
+    margin-top: 3px;
+}
+
+.campoupload {
+    border: 2px solid rgb(7, 81, 146);
+    border-radius: 5px;
+    padding: 5px;
 }
 
 input {

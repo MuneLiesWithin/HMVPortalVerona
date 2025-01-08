@@ -1,4 +1,6 @@
-﻿async function uploadExcel() {
+﻿const loadElement = document.getElementById("loadanime")
+
+async function uploadExcel() {
     const inputFile = document.getElementById("fileUpload").files[0];
 
     if (!inputFile) {
@@ -10,7 +12,7 @@
     const referenceFilePath = "Excel/Excel.xlsx";
 
     // Loading gambiarra
-    const loadElement = document.getElementById("loadanime")
+    
     loadElement.classList.add("lds-ring")
 
     try {
@@ -97,9 +99,4 @@ function flashMessage(type, message) {
         messageElement.innerHTML = "";
         messageElement.classList.remove(type);
     }, 3000);
-}
-
-function loadAnimation() {
-    const loadElement = document.getElementById("loadanime")
-    loadElement.classList.add("lds-ring")
 }
