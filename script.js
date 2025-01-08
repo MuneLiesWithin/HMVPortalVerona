@@ -9,7 +9,10 @@
     // Path to the reference Excel file
     const referenceFilePath = "Excel/Excel.xlsx";
 
+    // Loading gambiarra
+    const loadElement = document.getElementById("loadanime")
     flashMessage("neutral", "Aguarde um momento...")
+    loadElement.classList.add("lds-ring")
 
     try {
         // Read and parse the uploaded Excel file
@@ -29,13 +32,16 @@
             // Save the uploaded file as Excel2.xlsx
             saveUploadedFile(inputFile, "Excel/Excel2.xlsx");
             flashMessage("success", "Arquivo subido com sucesso")
+            loadElement.classList.remove("lds-ring")
         } else {
             console.log("An error occurred: Column names do not match.");
             flashMessage("error", "Ocorreu um erro...")
+            loadElement.classList.remove("lds-ring")
         }
     } catch (error) {
         console.error("An error occurred:", error);
         flashMessage("error", "Ocorreu um erro...")
+        loadElement.classList.remove("lds-ring")
     }
 }
 
@@ -92,4 +98,9 @@ function flashMessage(type, message) {
         messageElement.innerHTML = "";
         messageElement.classList.remove(type);
     }, 3000);
+}
+
+function loadAnimation() {
+    const loadElement = document.getElementById("loadanime")
+    loadElement.classList.add("lds-ring")
 }
