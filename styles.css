@@ -63,22 +63,16 @@ button:active{
     color:rgb(143, 65, 65);
 }
 
-.form button {
-    margin-top: 7px;
-    margin-left: 40px
+
+.loadmaster {
+    display: flex;
+    justify-content: center;
 }
 
 input {
-    border-color: rgb(7, 81, 146);
-    border-radius: 5px;
-    border-style: solid;
     padding: 2px;
 }
 
-legend {
-    text-align: center;
-    font-weight: bold;
-}
 
 /* FLASH MESSAGE */
 

@@ -11,7 +11,6 @@
 
     // Loading gambiarra
     const loadElement = document.getElementById("loadanime")
-    flashMessage("neutral", "Aguarde um momento...")
     loadElement.classList.add("lds-ring")
 
     try {
