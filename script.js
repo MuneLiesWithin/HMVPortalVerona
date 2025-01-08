@@ -12,7 +12,6 @@ async function uploadExcel() {
     const referenceFilePath = "Excel/Excel.xlsx";
 
     // Loading gambiarra
-    
     loadElement.classList.add("lds-ring")
 
     try {
