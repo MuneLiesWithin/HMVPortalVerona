@@ -35,7 +35,7 @@ async function uploadExcel() {
             loadElement.classList.remove("lds-ring")
         } else {
             console.log("An error occurred: Column names do not match.");
-            flashMessage("error", "Ocorreu um erro...")
+            flashMessage("warning", "Arquivo incompatível")
             loadElement.classList.remove("lds-ring")
         }
     } catch (error) {
