@@ -77,7 +77,7 @@ async function saveUploadedFile(file) {
     formData.append("file", file);
 
     try {
-        const response = await fetch("https://localhost:7232/api/excel/upload", {
+        const response = await fetch("https://localhost:44375/api/Excel/Upload", {
             method: "POST",
             body: formData,
         });
