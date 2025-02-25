@@ -3,11 +3,12 @@
 async function uploadExcel() {
     const inputFile = document.getElementById("fileUpload").files[0];
 
+    
     if (!inputFile) {
         flashMessage("warning", "Por favor insira um arquivo");
         return;
     }
-
+    
     // Path to the reference Excel file
     const referenceFilePath = "Excel/Excel.xlsx";
 
@@ -30,9 +31,11 @@ async function uploadExcel() {
         // Compare columns
         if (arraysEqual(uploadedFileColumns, referenceFileColumns)) {
             // Save the uploaded file as Excel2.xlsx
-            saveUploadedFile(inputFile, "Excel/Excel2.xlsx");
-            flashMessage("success", "Arquivo subido com sucesso")
-            loadElement.classList.remove("lds-ring")
+            saveUploadedFile(inputFile);
+            
+            //flashMessage("success", "Arquivo subido com sucesso")
+            //loadElement.classList.remove("lds-ring")
+            
         } else {
             console.log("An error occurred: Column names do not match.");
             flashMessage("warning", "Arquivo incompatível")
@@ -44,6 +47,7 @@ async function uploadExcel() {
         loadElement.classList.remove("lds-ring")
     }
 }
+
 
 function getExcelColumns(file) {
     return new Promise((resolve, reject) => {
@@ -84,11 +88,19 @@ async function saveUploadedFile(file) {
 
         const result = await response.text();
         console.log(result);
+
+        if(response.ok) {
+            flashMessage("success", "Upload realizado com sucesso")
+            loadElement.classList.remove("lds-ring")
+        } else {
+            flashMessage("error", "Ocorreu algum erro")
+            loadElement.classList.remove("lds-ring")
+        }
+        
     } catch (error) {
         console.error("An error occurred during file upload:", error);
     }
 }
-
 
 function flashMessage(type, message) {
     const messageElement = document.getElementById("message");
