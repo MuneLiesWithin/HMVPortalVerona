@@ -2,7 +2,6 @@
 
 async function uploadExcel() {
     const inputFile = document.getElementById("fileUpload").files[0];
-
     
     if (!inputFile) {
         flashMessage("warning", "Por favor insira um arquivo");
